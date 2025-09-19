@@ -541,7 +541,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 12
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -568,7 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b78ee507ff00174986e03a97df72900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  myRigidBody: {fileID: 0}
+  myRigidBody: {fileID: 1542886258}
   flapStrength: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
