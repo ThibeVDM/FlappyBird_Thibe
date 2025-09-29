@@ -8,6 +8,9 @@ public class LogicScript : MonoBehaviour
     public int playerScore;
     public Text scoreText;
     public GameObject gameOverScreen;
+    public AudioSource src;
+    public AudioClip sfx1;
+    public AudioSource musicHandler;
 
     [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd)
@@ -24,5 +27,17 @@ public class LogicScript : MonoBehaviour
     public void gameOver()
     {
         gameOverScreen.SetActive(true);
+        musicHandler.Stop();
+        
+            src.clip = sfx1;
+            src.Play();
+        
+
+        
+    }
+
+    public void playGame()
+    {
+
     }
 }

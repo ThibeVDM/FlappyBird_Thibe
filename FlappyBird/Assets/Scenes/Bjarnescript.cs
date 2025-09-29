@@ -1,5 +1,7 @@
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
+
 
 public class Bjarnescript : MonoBehaviour
 {
@@ -7,11 +9,15 @@ public class Bjarnescript : MonoBehaviour
     public float flapStrength;
     public LogicScript logic;
     public bool bjarneIsAlive = true;
+    private int i = 0;
+    
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+        
     }
 
     // Update is called once per frame
@@ -19,13 +25,28 @@ public class Bjarnescript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && bjarneIsAlive)
         {
+            
             myRigidBody.linearVelocity = Vector2.up * flapStrength;
+            
+        }
+        if (transform.position.y < -18 || transform.position.y > 18)
+        {
+            logic.gameOver();
+            Destroy(gameObject);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        logic.gameOver();
-        bjarneIsAlive = false;
+        GameObject otherObject = collision.gameObject;
+
+        if (!otherObject.CompareTag("Thibe")){
+            logic.gameOver();
+            bjarneIsAlive = false;
+            
+        }
+        
+        
+        
     }
 }

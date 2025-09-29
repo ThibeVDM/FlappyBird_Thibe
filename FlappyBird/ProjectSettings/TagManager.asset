@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Logic
+  - Thibe
   layers:
   - Default
   - TransparentFX
@@ -12,7 +13,7 @@ TagManager:
   - Bjarne
   - Water
   - UI
-  - 
+  - Thibe
   - 
   - 
   - 
@@ -39,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 545292479
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
