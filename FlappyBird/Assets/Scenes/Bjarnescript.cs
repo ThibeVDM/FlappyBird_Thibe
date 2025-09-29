@@ -9,6 +9,9 @@ public class Bjarnescript : MonoBehaviour
     public float flapStrength;
     public LogicScript logic;
     public bool bjarneIsAlive = true;
+    public AudioSource src;
+    public AudioClip sfx1;
+    public AudioSource musicHandler;
     private int i = 0;
     
     
@@ -43,7 +46,14 @@ public class Bjarnescript : MonoBehaviour
         if (!otherObject.CompareTag("Thibe")){
             logic.gameOver();
             bjarneIsAlive = false;
-            
+            musicHandler.Stop();
+            if (i < 1)
+            {
+                src.clip = sfx1;
+                src.Play();
+            }
+
+            i = i + 1;
         }
         
         
